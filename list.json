@@ -1,0 +1,41 @@
+{
+    "toDoItems": {
+        "item1":{
+            "task":"Task1",
+            "description":"Description for task 1",
+            "start":"10/05/2018",
+            "end":"10/14/2018",
+            "timestamp":"",
+            "employee":"",
+            "id":1
+        },
+        "item2":{
+            "task":"Task2",
+            "description":"Description for task 2",
+            "start":"09/22/2018",
+            "end":"10/14/2018",
+            "timestamp":"",
+            "employee":"",
+            "id":2
+        },
+        "item3":{
+            "task":"Task3",
+            "description":"Description for task 3",
+            "start":"10/05/2018",
+            "end":"10/14/2018",
+            "timestamp":"",
+            "employee":"",
+            "id":3
+        },
+        "item4":{
+            "task":"Task4",
+            "description":"Description for task 4",
+            "start":"10/05/2018",
+            "end":"10/14/2018",
+            "timestamp":"",
+            "employee":"",
+            "id":4
+        }
+    },
+    "employees": ["Lawerence", "Charolette", "Leonard", "Rose", "Mitch", "Isabelle"]
+}

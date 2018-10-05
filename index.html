@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+    <script src="js/controller/main.js"></script>
+    <script src="js/services/httpRequests.js"></script>
+</head>
+
+<body>
+    <header></header>
+    <main ng-app="toDo" ng-controller="toDoController">
+        <form ng-submit="addTask()">
+            <input type="text" ng-model="task">
+            <input type="text" ng-model="description">
+            <input type="date" ng-model="start" min="{{{minDate}}}">
+            <input type="date" ng-model="end">
+            <select ng-model="employeeList" ng-options="name for name in employees"></select>
+            <input type="submit" value="Submit">
+        </form>
+        <table>
+            <tr ng-repeat="task in tasks" id="{{{task.id}}}">
+                <td><input type="checkbox"></td>
+                <td>{{{task.task}}}</td>
+                <td>{{{task.description}}}</td>
+                <td>{{{task.start}}}</td>
+                <td>{{{task.end}}}</td>
+                <td>{{{task.employee}}}</td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>
