@@ -13,7 +13,7 @@ angular.module('httpRequests', []).service('httpRequests', function ($http, $fil
     };
 
     this.delete = function(){
-        $http.delete(`https://todo-f02af.firebaseio.com/toDoItems/item${idNum}.json`)
+        $http.delete(`https://todo-f02af.firebaseio.com/toDoItems/item${idNum}.json`);
     };
 
     this.update = function(){};
