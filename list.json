@@ -6,7 +6,7 @@
             "start":"10/05/2018",
             "end":"10/14/2018",
             "timestamp":"",
-            "employee":"",
+            "employee":"Lawerence",
             "id":1
         },
         "item2":{
@@ -15,7 +15,7 @@
             "start":"09/22/2018",
             "end":"10/14/2018",
             "timestamp":"",
-            "employee":"",
+            "employee":"Leonard",
             "id":2
         },
         "item3":{
@@ -24,7 +24,7 @@
             "start":"10/05/2018",
             "end":"10/14/2018",
             "timestamp":"",
-            "employee":"",
+            "employee":"Rose",
             "id":3
         },
         "item4":{
@@ -33,7 +33,7 @@
             "start":"10/05/2018",
             "end":"10/14/2018",
             "timestamp":"",
-            "employee":"",
+            "employee":"Charolette",
             "id":4
         }
     },

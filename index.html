@@ -4,13 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>To Do List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/controller/main.js"></script>
     <script src="js/services/httpRequests.js"></script>
+    <script src="js/services/editTasks.js"></script>
 </head>
 
 <body>
@@ -25,15 +28,29 @@
             <input type="submit" value="Submit">
         </form>
         <table>
-            <tr ng-repeat="task in tasks" id="{{{task.id}}}">
-                <td><input type="checkbox"></td>
-                <td>{{{task.task}}}</td>
-                <td>{{{task.description}}}</td>
-                <td>{{{task.start}}}</td>
-                <td>{{{task.end}}}</td>
-                <td>{{{task.employee}}}</td>
-            </tr>
+            <thead>
+                <tr>
+                    <td>Task Name</td>
+                    <td>Description</td>
+                    <td>Start Date</td>
+                    <td>End Date</td>
+                    <td>Employee</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="task in tasks" id="row{{{task.id}}}">
+                    <td>{{{task.task}}}</td>
+                    <td>{{{task.description}}}</td>
+                    <td>{{{task.start}}}</td>
+                    <td>{{{task.end}}}</td>
+                    <td>{{{task.employee}}}</td>
+                    <td><button ng-click="enableEdit()">Edit</button></td>
+                    <td><button ng-click="delete()">Delete</button></td>
+                </tr>
+            </tbody>
+
         </table>
+        
     </main>
 </body>
 

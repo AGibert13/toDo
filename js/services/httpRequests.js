@@ -7,12 +7,15 @@ angular.module('httpRequests', []).service('httpRequests', function ($http, $fil
             start: startDate,
             end: endDate,
             timestamp: $filter('date')(currentTime, 'medium'),
-            employee: selectedEmployee
+            employee: selectedEmployee,
+            id: idNum
         };
         $http.put(`https://todo-f02af.firebaseio.com/toDoItems/item${idNum}.json`, JSON.stringify(newTask));
+
+        return newTask;
     };
 
-    this.delete = function(){
+    this.delete = function(idNum){
         $http.delete(`https://todo-f02af.firebaseio.com/toDoItems/item${idNum}.json`);
     };
 
@@ -21,4 +24,4 @@ angular.module('httpRequests', []).service('httpRequests', function ($http, $fil
     this.getData = function(url){
       return $http.get(url)
     }
-})
+});
