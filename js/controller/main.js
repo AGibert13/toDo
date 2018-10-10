@@ -42,31 +42,25 @@
                  };
              };
              $scope.cancelEdit = function () {
-                 //  console.log(this);
                  let tbody = document.getElementsByTagName('tbody');
                  let data = editTasks.exitEdit();
                  data = ($compile(data)($scope));
-                 console.log(data);
                  angular.element(tbody).html("");
                  for (const element in data) {
-                     // console.log(element)
                      if (!isNaN(element)) {
                          angular.element(tbody).append(data[element]);
                      }
                  };
              };
 
-             $scope.updateTask = function(){
-                let tbody = document.getElementsByTagName('tbody');
-                let tempTask = httpRequests.add($scope.editTask, $scope.editDescription, $filter('date')($scope.editStart, 'MM/dd/yyyy'), $filter('date')($scope.editEnd, 'MM/dd/yyyy'), $scope.editEmployeeList, $scope.currentTask.id);
-                console.log($scope.tasks[`item${$scope.currentTask.id}`]);
-                $scope.tasks[`item${$scope.currentTask.id}`] = tempTask;
-                let data = editTasks.exitEdit();
+             $scope.updateTask = function () {
+                 let tbody = document.getElementsByTagName('tbody');
+                 let tempTask = httpRequests.add($scope.editTask, $scope.editDescription, $filter('date')($scope.editStart, 'MM/dd/yyyy'), $filter('date')($scope.editEnd, 'MM/dd/yyyy'), $scope.editEmployeeList, $scope.currentTask.id);
+                 $scope.tasks[`item${$scope.currentTask.id}`] = tempTask;
+                 let data = editTasks.exitEdit();
                  data = ($compile(data)($scope));
-                 console.log(data);
                  angular.element(tbody).html("");
                  for (const element in data) {
-                     // console.log(element)
                      if (!isNaN(element)) {
                          angular.element(tbody).append(data[element]);
                      }
