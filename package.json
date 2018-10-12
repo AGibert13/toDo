@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node js/server/server.js",
-    "startLocal": "nodemon js/server/server.js"
+    "startLocal": "nodemon js/server/server.js",
+    "test": "mocha js/server/**/*.test.js",
+    "test-watch": "nodemon --exec npm test"
   },
   "author": "",
   "license": "ISC",

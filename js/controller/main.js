@@ -1,10 +1,10 @@
  (function () {
-     angular.module('toDo', ['httpRequests', 'editTasks'])
+     angular.module('toDo', ['httpRequests', 'editTasks', 'getNewId'])
          .config(function ($interpolateProvider) {
              $interpolateProvider.startSymbol('{{{');
              $interpolateProvider.endSymbol('}}}')
          })
-         .controller('toDoController', ['$scope', '$http', '$filter', '$compile', 'httpRequests', 'editTasks', function ($scope, $http, $filter, $compile, httpRequests, editTasks) {
+         .controller('toDoController', ['$scope', '$http', '$filter', '$compile', 'httpRequests', 'editTasks','getNewId', function ($scope, $http, $filter, $compile, httpRequests, editTasks, getNewId) {
              $scope.employees = httpRequests.getData('https://todo-f02af.firebaseio.com/employees/.json')
                  .then(function (response) {
                      $scope.employees = response.data;
@@ -16,8 +16,10 @@
 
              $scope.minDate = $filter('date')((new Date()), 'yyyy-MM-dd');
              $scope.addTask = function () {
-                 let tempTask = httpRequests.add($scope.task, $scope.description, $filter('date')($scope.start, 'MM/dd/yyyy'), $filter('date')($scope.end, 'MM/dd/yyyy'), $scope.employeeList, (Object.keys($scope.tasks).length + 1));
-                 $scope.tasks[`item${(Object.keys($scope.tasks).length + 1)}`] = tempTask;
+                 let id = getNewId.newId($scope.tasks);
+                 console.log(id);
+                 let tempTask = httpRequests.add($scope.task, $scope.description, $filter('date')($scope.start, 'MM/dd/yyyy'), $filter('date')($scope.end, 'MM/dd/yyyy'), $scope.employeeList, id);
+                 $scope.tasks[`item${id}`] = tempTask;
              };
              $scope.delete = function () {
                  let id = this.task.id;

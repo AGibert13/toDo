@@ -10,6 +10,7 @@ angular.module('httpRequests', []).service('httpRequests', function ($http, $fil
             employee: selectedEmployee,
             id: idNum
         };
+        console.log(newTask);
         $http.put(`https://todo-f02af.firebaseio.com/toDoItems/item${idNum}.json`, JSON.stringify(newTask));
 
         return newTask;

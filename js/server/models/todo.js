@@ -8,10 +8,8 @@ let toDo = mongoose.model('ToDo', {
         type: String    
     },
     end: {
-        type: Number    },
-    id:{
-        type:Number
-    },
+        type: Number},
+    
     start:{
         type: String
     },
@@ -25,3 +23,7 @@ let toDo = mongoose.model('ToDo', {
 }, "Tasks");
 
 module.exports = {toDo};
+
+// id:{
+//     type:Number
+// },
