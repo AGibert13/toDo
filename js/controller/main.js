@@ -1,8 +1,8 @@
  (function () {
      angular.module('toDo', ['httpRequests', 'editTasks', 'getNewId'])
          .config(function ($interpolateProvider) {
-             $interpolateProvider.startSymbol('{{{');
-             $interpolateProvider.endSymbol('}}}')
+             $interpolateProvider.startSymbol('[{');
+             $interpolateProvider.endSymbol('}]')
          })
          .controller('toDoController', ['$scope', '$http', '$filter', '$compile', 'httpRequests', 'editTasks','getNewId', function ($scope, $http, $filter, $compile, httpRequests, editTasks, getNewId) {
              $scope.employees = httpRequests.getData('https://todo-f02af.firebaseio.com/employees/.json')

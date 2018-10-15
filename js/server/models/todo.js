@@ -8,7 +8,11 @@ let toDo = mongoose.model('ToDo', {
         type: String    
     },
     end: {
-        type: Number},
+        
+    },
+    idNum:{
+        type: Number
+    },
     
     start:{
         type: String
@@ -18,7 +22,19 @@ let toDo = mongoose.model('ToDo', {
     },
     timestamp: {
         type: String
-    }
+    },
+    completed:{
+        type:Boolean,
+        default: false
+    },
+    completedAt:{
+        type: Number,
+        default: null
+    },
+    // _creator: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     required: true
+    // }
 
 }, "Tasks");
 

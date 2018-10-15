@@ -34,7 +34,7 @@
             <section class="form-row">
                 <section class="form-group col">
                     <label>Start Date</label>
-                    <input type="date" ng-model="start" min="{{{minDate}}}" class="form-control">
+                    <input type="date" ng-model="start" min="[{minDate}]" class="form-control">
                 </section>
                 <section class="form-group col">
                     <label>End Date</label>
@@ -65,12 +65,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="task in tasks" id="row{{{task.id}}}" scope="row">
-                    <td>{{{task.task}}}</td>
-                    <td>{{{task.description}}}</td>
-                    <td>{{{task.start}}}</td>
-                    <td>{{{task.end}}}</td>
-                    <td>{{{task.employee}}}</td>
+                <tr ng-repeat="task in tasks" id="row[{task.id}]" scope="row">
+                    <td>[{task.task}]</td>
+                    <td>[{task.description}]</td>
+                    <td>[{task.start}]</td>
+                    <td>[{task.end}]</td>
+                    <td>[{task.employee}]</td>
                     <td><button ng-click="enableEdit()">Edit</button></td>
                     <td><button ng-click="delete()">Delete</button></td>
                 </tr>
